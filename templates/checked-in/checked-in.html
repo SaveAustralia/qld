@@ -1,0 +1,13 @@
+<div class="checked-in">
+  <div class="content">
+    <div class="details">
+      <div class="check-img"></div>
+      <p class="first">Thanks {{ $ctrl.first }}, you've checked in at</p>
+      <h2 ng-bind-html="$ctrl.location | unsafe"></h2>
+    </div>
+  </div>
+  <p class="p2">Thank you for supporting COVID-19 contact tracing efforts and doing your bit to keep Queenslanders safe.</p>
+  <div class="btns">
+    <button type="button" class="btn btn-block btn-primary" ng-click="$ctrl.goBack()">Done</button>
+  </div>
+</div>

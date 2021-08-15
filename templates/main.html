@@ -1,0 +1,18 @@
+<form name="$ctrl.form" class="main" ng-submit="$ctrl.checkIn()" novalidate autocomplete="off">
+  <div class="form-group">
+    <input type="text" name="first" ng-model="$ctrl.first" class="form-control" placeholder="First Name" required>
+    <div ng-messages="$ctrl.form.first.$error" ng-if="$ctrl.form.$submitted">
+      <div ng-message="required">First Name is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" name="location" ng-model="$ctrl.location" class="form-control" placeholder="Location ex. Bunnings" required>
+    <div ng-messages="$ctrl.form.location.$error" ng-if="$ctrl.form.$submitted">
+      <div ng-message="required">Location is required</div>
+    </div>
+  </div>
+
+  <button type="submit" id="check-in" class="btn btn-block btn-primary mt-3 mb-4">Check-in to this location</button>
+
+  <button type="button" class="btn btn-block btn-outline-primary" ng-repeat="location in $ctrl.locations track by $index" ng-click="$ctrl.setLocation(location)">{{ location | limitTo: 20 }}{{ location.length > 20 ? '...' : '' }}</button>
+</form>
